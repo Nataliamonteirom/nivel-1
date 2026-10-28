@@ -6,6 +6,10 @@ while True:
     if valor_da_compra == 0:
         break
 
+    if valor_da_compra < 0:
+         print("Valor inválido! Digite um valor positivo.")
+         continue
+
     desconto = 0.0
     desconto_extra = 0.0
 
@@ -32,3 +36,12 @@ while True:
         "desconto_extra": desconto_extra,
         "valor_final": valor_final
     })
+
+quantidade_compras = len(historico_compras)
+print(f"Quantidade de compras: {quantidade_compras}")
+
+total_bruto = sum(
+    compra["valor_da_compra"] for compra in historico_compras
+)
+
+print(f"Total bruto: R$ {total_bruto:.2f}")
