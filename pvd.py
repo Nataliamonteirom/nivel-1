@@ -1,3 +1,5 @@
+historico_compras = []
+
 while True:
     valor_da_compra = float(input("Digite o valor da compra (0 para encerrar): "))
 
@@ -23,3 +25,10 @@ while True:
 
     valor_final = valor_da_compra - desconto - desconto_extra
     print(f"Valor final da compra: R$ {valor_final:.2f}")
+
+    historico_compras.append({
+        "valor_da_compra": valor_da_compra,
+        "desconto": desconto,
+        "desconto_extra": desconto_extra,
+        "valor_final": valor_final
+    })
